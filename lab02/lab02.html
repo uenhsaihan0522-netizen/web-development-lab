@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="mn">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Лаборатори 02:Хэрэглэгч анкет</title>
+    </head>
+    <body>
+        <!-- Вебийн толгой хэсэг-->
+         <header>
+            <h1>Хэрэглэгчийн бүртгэлийн хуудас </h1>
+            <!-- Навигацийн цэс-->
+             <nav>
+                <ul>
+                    <li><a href="../index.html">Нүүр</a></li>
+                    <li><a href="#">Анкет засах</a></li>
+                    <li><a href="#">Тусламж</a></li>
+                </ul>
+             </nav>
+         </header>
+         <!--Үндсэн контент-->
+         <main>
+            <article>
+                <section>
+                    <h2>Хэрэглэгчийн анкет бөглөх</h2>
+                    <p> Доорх формын дагуу мэдээллээ бүрэн, үнэн зөв бөглөнө үү.</p>
+                    <!--Форм энд байрлана-->
+                </section>
+            </article>
+         </main>
+         <!--Хөл хэсэг-->
+         <footer>
+            <p>&COPY;;2026 Веб зохиомжийн хичээл.Бүх эрх хуулиар хамгаалагдсан.</p>
+         </footer>
+    </body>
+</html>
+<!--Сонирхлын Жагсаалт-->
+<section>
+    <div> <h2>Миний сонирхол:</h2>
+                <input type="checkbox" id="sports" name="hobby" value="sports">
+                <label for="sports">Спорт</label><br>
+                <input type="checkbox" id="coding" name="hobby" value="travel">
+                <label for="travel">Аялал</label><br>
+                <input type="checkbox" id="music" name="hobby" value="music">
+                <label for="music">Хөгжим сонсох</label></div>
+</section>
+ <!-- Дүнгийн хүснэгт -->
+ <section> <h2>Миний дүн</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Хичээл</th>
+                <th>Дүн</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Программчлалын үндэс</td>
+                <td>98</td>
+            </tr>
+            <tr>
+                <td>Дискрет бүтэц</td>
+                <td>98</td>
+            </tr>
+            <tr>
+                <td>Компьютерийн сүлжээ</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>Биеийн тамир</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Магадлал статистик</td>
+                <td>90</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+ <table>
+    <form  action="#" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Хувийн мэдээлэл</legend>
+            
+        </fieldset>
+    </form>
+ <!-- 1-р бүлэг: Хувийн мэдээлэл -->
+ <fieldset>
+     <legend> Хувийн мэдээлэл</legend>
+     <label for="fullname">Овог нэр</label><br>
+     <input type="text" id="fullname " name="fullname" placeholder="*********" required minlength="2"><br><br>
+     <label for="email">Цахим хаяг(Email):</label><br>
+     <input type="email" id="email" name="email" placeholder="example@domain.com" 
+     required><br><br>
+     <label for="userpassword">Нууц үг (Багадаа 8 тэмдэгт, тоо болон жижиг үсэг):</label><br>
+     <input type="password" id="userpassword" name="userpassword" required pattern="(?=.*\d)(?=.*[a-z]).{8,}"required><br><br>
+     <label for="phone">Утасны дугаар:</label><br>
+     <input type="tel" id="phone" name="phone" pattern="[0-9]{8}" placeholder="********" required><br><br>
+     <label for="dob">Төрсөн огноо:</label><br>
+     <input type="date" id="dob" name="dob" required><br><br>
+     <label>Хүйс:</label><br>
+     <input type="radio" id="male" name="gender" value="male">
+     <label for="male">Эрэгтэй</label>
+     <input type="radio" id="female" name="gender" value="female">
+     <label for="female">Эмэгтэй</label><br>
+     <label for="city">Оршин суугаа хот/аймаг:</label><br>
+                <select id="city" name="city" required>
+                    <option value="">-- Сонгох --</option>
+                    <option value="ub">Улаанбаатар</option>
+                    <option value="darkhan">Дархан</option>
+                    <option value="erdenet">Эрдэнэт</option>
+                    <option value="sukhbaatar">Сүхбаатар</option>
+                    <option value="umnugovi">Өмнөговь</option>
+                </select>
+ </fieldset>     
+ <br>
+ <!-- 2-р бүлэг: Мэргэжил ба Сургалтын мэдээлэл -->
+ <fieldset>
+     <legend>Боловсрол ба Сонирхол</legend>
+     <label for="degree">Суралцаж буй түвшин:</label><br>
+     <select id="degree" name="degree" required>
+     <option value="">-- Сонгоно уу --</option>
+     <option value="zergiin bus">Зэргийн бус</option>
+     <option value="bachelor">Бакалавр</option>
+     <option value="master">Магистр</option>
+     <option value="doctor">Докторант</option></select><br><br>
+     <label>Сонирхож буй технологиуд:</label><br>
+     <input type="checkbox" id="html" name="skills" value="HTML">
+     <label for="html">HTML5 / CSS3</label><br>
+     <input type="checkbox" id="js" name="skills" value="JavaScript">
+     <label for="js">JavaScript</label><br>
+     <input type="checkbox" id="c++" name="skills" value="C++">
+     <label for="php">C++</label><br><br>
+     <input type="checkbox" id="visial studio code" name="skills" value="VS">
+     <label for="php">VS </label><br><br>
+     <input type="checkbox" id="python" name="skills" value="Python">
+     <label for="Python">Python</label><br><br>
+     <label for="avatar">Профайл зураг оруулна уу:</label> 
+     <input type="file" id="avatar" name="avatar" accept="image/*"><br><br>
+     <label for="bio">Товч танилцуулга / Өөрийн тухай:</label><br>
+     <textarea id="bio" name="bio" rows="4" cols="50" placeholder="Өөрийн танилцуулгыг энд бичнэ
+үү..."></textarea><br>
+ </fieldset>
+ <br>
+ <!-- Илгээх ба Арилгах товчлуурууд -->
+ <button type="submit">Анкет Илгээх</button>
+ <button type="reset">Дахин эхлүүлэх</button>
+</form>

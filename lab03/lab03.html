@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаборатори 03: Хэрэглэгчийн анкет</title>
+    
+    <!-- 5. Google Fonts (Roboto) холбох -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- 1. External CSS файлыг холбох -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Вебийн толгой хэсэг -->
+    <header class="main-header">
+        <h1 class="main-title">Хэрэглэгчийн бүртгэлийн хуудас</h1>
+        <!-- Навигацийн цэс -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../index.html">Нүүр</a></li>
+                <li><a href="#">Анкет засах</a></li>
+                <li><a href="#">Тусламж</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Үндсэн контент -->
+    <main class="main-content">
+        <article class="card-container">
+            <!-- 4. Position: relative/absolute ашигласан Badge/Тэмдэг -->
+            <section class="section-header">
+                <h2 class="section-title">Хэрэглэгчийн анкет бөглөх</h2>
+                <p class="section-desc">Доорх формын дагуу мэдээллээ бүрэн, үнэн зөв бөглөнө үү.</p>
+            </section>
+
+            <!-- Сонирхлын Жагсаалт -->
+            <section class="hobby-section">
+                <h3 class="sub-title">Миний сонирхол:</h3>
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="sports" name="hobby" value="sports"> Спорт
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="coding" name="hobby" value="aylah"> Аялал
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="music" name="hobby" value="hugjim sonsoh"> Хөгжим сонсох
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="coding" name="hobby" value="nom unshih">Ном унших
+                    </label> 
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="coding" name="hobby" value="gerel zurag darah">Гэрэл зураг дарах
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="coding" name="hobby" value=" hool hiih">Хоол хийх
+                    </label>
+                               </div>
+            </section>
+            <!-- Бүртгэлийн Форм -->
+            <form action="#" method="POST" enctype="multipart/form-data" class="registration-form">
+                
+                <!-- 1-р бүлэг: Хувийн мэдээлэл -->
+                <fieldset class="form-fieldset">
+                    <legend class="form-legend">Хувийн мэдээлэл</legend>
+                    
+                    <div class="form-group">
+                        <label for="surname" class="form-label">Овог:</label>
+                        <input type="text" id="fullname" name="surname" class="form-input" placeholder="Овогоо оруулна уу" required minlength="2">
+                    </div>
+                    <div class="form-group">
+                        <label for="username" class="form-label">Өөрийн нэр</label>
+                        <input type="text" id="fullname" name="username" class="form-input" placeholder="Өөрийн нэрийг оруулна">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Цахим хаяг (Email):</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="example@domain.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userpassword" class="form-label">Нууц үг (Багадаа 8 тэмдэгт, тоо болон жижиг үсэг):</label>
+                        <input type="password" id="userpassword" name="userpassword" class="form-input" required pattern="(?=.*\d)(?=.*[a-z]).{8,}" placeholder="********">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Утасны дугаар:</label>
+                        <input type="tel" id="phone" name="phone" class="form-input" pattern="[0-9]{8}" placeholder="********" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dob" class="form-label">Төрсөн огноо:</label>
+                        <input type="date" id="dob" name="dob" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Хүйс:</label>
+                        <div class="radio-group">
+                            <label><input type="radio" id="male" name="gender" value="male"> Эрэгтэй</label>
+                            <label><input type="radio" id="female" name="gender" value="female"> Эмэгтэй</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city" class="form-label">Оршин суугаа хот/аймаг:</label>
+                        <select id="city" name="city" class="form-select" required>
+                            <option value="">-- Сонгох --</option>
+                            <option value="ub">Улаанбаатар</option>
+                            <option value="arkhangai">Архангай</option>
+                            <option value="Bayan-Olgii">Баян-Өлгий</option>
+                            <option value="bayankhongor">Баянхонгор</option>
+                            <option value="bulgan">Булган</option>
+                            <option value="gobi-altai">Говь-Алтай</option>
+                            <option value="govisumber">Говьсүмбэр</option>
+                            <option value="darkhan-uul">Дархан-Уул</option>
+                            <option value="dornogovi">Дорноговь</option>
+                            <option value="dornod">Дорнод</option>
+                            <option value="dundgovi">Дундговь</option>
+                            <option value="zavkhan">Завхан</option>
+                            <option value="erdenet">Эрдэнэт</option>
+                            <option value="ovorkhangai">Өвөрхангай</option>
+                            <option value="umnugovi">Өмнөговь</option>
+                            <option value="sukhbaatar">Сүхбаатар</option>
+                            <option value="selenge">Сэлэнгэ</option>
+                            <option value="tuv">Төв</option>
+                            <option value="uvs">Увс</option>
+                            <option value="khovd">Ховд</option>
+                            <option value="khovsgol">Хөвсгөл</option>
+                            <option value="khentii">Хэнтий</option>                    
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- 2-р бүлэг: Мэргэжил ба Сургалтын мэдээлэл -->
+                <fieldset class="form-fieldset">
+                    <legend class="form-legend">Боловсрол ба Сонирхол</legend>
+                    <div class="form-group">
+                        <label for="degree" class="form-label">Суралцаж буй сургууль</label>
+                        <select id="degree" name="degree" class="form-select" required>
+                            <option value="">--Сонгоно уу--</option>
+                            <option value="MUIS"> МУИС</option>
+                            <option value="shutis">ШУТИС</option>
+                            <option value="etugen">Этүгэн</option>
+                            <option value="anagaah">АУШИС</option>
+                            <option value="humuunleg">ХУИХ</option>
+                            <option value="huduu aj ahui">ХААИС</option>
+                            <option value=" ikh zasag">ИХ ЗАСАГ</option>
+                            <option value=" mandah">МАНДАХ</option>
+                            <option value="suis">СУИС</option>
+                            <option value="sezis">СЭЗИС</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="degree" class="form-label">Суралцаж буй түвшин:</label>
+                        <select id="degree" name="degree" class="form-select" required>
+                            <option value="">-- Сонгоно уу --</option>
+                            <option value="zergiin bus">Зэргийн бус</option>
+                            <option value="bachelor">Бакалавр</option>
+                            <option value="master">Магистр</option>
+                            <option value="doctor">Докторант</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Сонирхож буй технологиуд:</label>
+                        <div class="checkbox-list">
+                            <label><input type="checkbox" id="html" name="skills" value="HTML"> HTML5 / CSS3</label>
+                            <label><input type="checkbox" id="js" name="skills" value="JavaScript"> JavaScript</label>
+                            <label><input type="checkbox" id="cpp" name="skills" value="C++"> C++</label>
+                            <label><input type="checkbox" id="vscode" name="skills" value="VS"> VS Code</label>
+                            <label><input type="checkbox" id="python" name="skills" value="Python"> Python</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="avatar" class="form-label">Профайл зураг оруулна уу:</label>
+                        <input type="file" id="avatar" name="avatar" class="file-input" accept="image/*">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bio" class="form-label">Товч танилцуулга / Өөрийн тухай:</label>
+                        <textarea id="bio" name="bio" rows="4" class="form-textarea" placeholder="Өөрийн танилцуулгыг энд бичнэ үү..."></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- Илгээх ба Арилгах товчлуурууд -->
+                <div class="btn-group">
+                    <button type="submit" class="btn btn-submit">Анкет Илгээх</button>
+                    <button type="reset" class="btn btn-reset">Дахин эхлүүлэх</button>
+                </div>
+            </form>
+        </article>
+    </main>
+
+    <!-- Хөл хэсэг -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Веб зохиомжийн хичээл. Бүх эрх хуулиар хамгаалагдсан.</p>
+    </footer>
+
+</body>
+</html>

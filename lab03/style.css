@@ -1,0 +1,221 @@
+/* ========================================================
+   5. Өнгө, фонт (Google Fonts) ба Тогтмол дизайны хэв маяг
+   ======================================================== */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f8;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* 2. Header болон Navigation цэсийг загварчлах */
+.main-header {
+    background-color: #1e293b;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.main-title {
+    margin: 0 0 10px 0;
+    font-size: 26px;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #38bdf8;
+}
+
+/* ========================================================
+   4. position: relative/absolute ашигласан жишээ (Badge)
+   ======================================================== */
+.main-content {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.card-container {
+    position: relative; /* Badge-ийг энд суурилж байрлуулна */
+    background: #ffffff;
+    max-width: 650px;
+    width: 100%;
+    
+    /* 3. Box model (padding, border, border-radius, margin) */
+    padding: 35px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.status-badge {
+    position: absolute; /* Relative эцэг контейнерийн дээд буланд гаргана */
+    top: -12px;
+    right: 25px;
+    background-color: #0ea5e9;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 14px;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(14, 165, 233, 0.4);
+}
+
+/* ========================================================
+   2. Гарчиг ба Хүснэгт загварчлах
+   ======================================================== */
+.section-title {
+    color: #0f172a;
+    margin-top: 0;
+}
+
+.section-desc {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.sub-title {
+    color: #334155;
+    font-size: 18px;
+    margin-bottom: 12px;
+    border-left: 4px solid #0ea5e9;
+    padding-left: 8px;
+}
+
+/* 3. Хүснэгтийн Box model тохиргоо */
+.grades-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.grades-table th, 
+.grades-table td {
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    text-align: left;
+}
+
+.grades-table th {
+    background-color: #f1f5f9;
+    color: #1e293b;
+}
+
+/* ========================================================
+   3. Box model (padding, border, border-radius, margin) 
+      ашиглан талбаруудыг "амьсгалуулах"
+   ======================================================== */
+.form-fieldset {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.form-legend {
+    font-weight: bold;
+    color: #0284c7;
+    padding: 0 8px;
+}
+
+.form-group {
+    margin-bottom: 18px; /* Талбарууд хоорондын зай */
+}
+
+.form-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #334155;
+}
+
+/* Талбаруудын үндсэн амьсгалах орон зай (Box Model) */
+.form-input, 
+.form-select, 
+.form-textarea {
+    width: 100%;
+    box-sizing: border-box; /* Бордер ба паддингийг хэмжээнд багтаана */
+    padding: 10px 14px; /* Дотор талын зай авах */
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus, 
+.form-select:focus, 
+.form-textarea:focus {
+    outline: none;
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+}
+
+.checkbox-group, .checkbox-list, .radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 5px 0;
+}
+
+/* ========================================================
+   2. Товчнуудыг тус тусад нь загварчлах
+   ======================================================== */
+.btn-group {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit {
+    background-color: #10b981;
+    color: #ffffff;
+}
+
+.btn-submit:hover {
+    background-color: #059669;
+}
+
+.btn-reset {
+    background-color: #ef4444;
+    color: #ffffff;
+}
+
+.btn-reset:hover {
+    background-color: #dc2626;
+}
+
+/* Хөл хэсгийн загвар */
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+    font-size: 14px;
+}

@@ -1,0 +1,318 @@
+/* =========================================================
+   1. Өнгө болон үндсэн тохиргоо (CSS Variables)
+   ========================================================= */
+:root {
+    --primary-color: #008080;
+    --primary-hover: #005959;
+    --secondary-color: #6c757d;
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --border-color: #cccccc;
+    --font-family: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   2. Header & Flexbox Navigation (Шаардлага биелүүлсэн)
+   ========================================================= */
+.main-header {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.page-title {
+    margin: 0;
+    font-size: 24px;
+}
+
+.navbar {
+    width: 100%;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* FLEXBOX ашигласан */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-item {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: opacity 0.2s;
+}
+
+.nav-item:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* =========================================================
+   3. Page Layout (CSS Grid: Sidebar + Main Content)
+   ========================================================= */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr; /* Sidebar + Main Content */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Sidebar Загвар */
+.sidebar {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    height: fit-content;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 8px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.sidebar-menu a:hover {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Main Content Card */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* =========================================================
+   4. Form CSS Grid Layout (3+ баганатай Грид)
+   ========================================================= */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Багана */
+    gap: 20px;
+}
+
+.form-fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 15px;
+    margin: 0;
+    background-color: #fafafa;
+}
+
+.form-legend {
+    font-weight: bold;
+    padding: 0 8px;
+    color: var(--primary-color);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.form-input,
+.form-select,
+.form-textarea,
+.form-file {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.checkbox-group,
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+}
+
+/* Flexbox Button Group */
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+/* =========================================================
+   5. Grades Section (3 баганатай CSS Grid Картууд)
+   ========================================================= */
+.section-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.grades-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Багана */
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.grade-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.grade-card h4 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.grade-card .score {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+/* Badge & Tooltip (position: relative/absolute) */
+.badge-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.badge {
+    background-color: #e74c3c;
+    color: white;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 160px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 11px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.badge-wrapper:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* =========================================================
+   6. Footer & Responsive Design
+   ========================================================= */
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #e9ecef;
+    margin-top: 40px;
+}
+
+/* Жижиг дэлгэцэнд зориулсанResponsive тохиргоо */
+@media (max-width: 900px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-grid,
+    .grades-grid {
+        grid-template-columns: 1fr;
+    }
+}

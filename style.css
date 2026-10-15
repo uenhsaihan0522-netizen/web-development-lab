@@ -1,0 +1,254 @@
+/* =========================================================
+   5. Өнгө, фонт (Google Fonts) сонгож, тогтмол дизайны хэв маяг
+   ========================================================= */
+:root {
+    --primary-color: #008080;      /* Гол өнгө - Dark Teal */
+    --primary-hover: #005959;      /* Товчлуурын hover өнгө */
+    --secondary-color: #6c757d;    /* Втор өнгө - Саарал */
+    --bg-color: #f4f7f6;           /* Вебийн арын фон */
+    --card-bg: #ffffff;           /* Картны арын фон */
+    --text-color: #333333;         /* Текстийн өнгө */
+    --border-color: #cccccc;       /* Хүрээний өнгө */
+    --font-family: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   2. Class сонгогч ашигласан загварчлал
+   ========================================================= */
+
+/* Header болон Navigation */
+.main-header {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+.page-title {
+    margin: 0 0 10px 0;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-item {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+}
+
+/* Эх бие, Картын бүтэц */
+.main-content {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+/* =========================================================
+   3. Box model (padding, border, border-radius, margin)
+      ашиглаж талбаруудыг "амьсгалуулах"
+   ========================================================= */
+
+.section-container {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.section-desc {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.form-fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 25px; /* Зай авах */
+}
+
+.form-legend {
+    font-weight: bold;
+    padding: 0 10px;
+    color: var(--primary-color);
+}
+
+.form-group {
+    margin-bottom: 18px; /* Талбар хоорондын зай */
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+/* Input, Select, Textarea загварууд */
+.form-input,
+.form-select,
+.form-textarea,
+.form-file {
+    width: 100%;
+    padding: 10px 12px; /* Дотор талын амьсгалах зай */
+    border: 1px solid var(--border-color);
+    border-radius: 4px; /* Булан дугуйлах */
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 128, 128, 0.3);
+}
+
+.radio-group,
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+/* Товчлуурын загварууд */
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Хүснэгт */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.data-table th, 
+.data-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.data-table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* =========================================================
+   4. position: relative/absolute ашигласан жишээ (Badge & Tooltip)
+   ========================================================= */
+
+.badge-wrapper {
+    position: relative; /* Эх элементэд relative өгнө */
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.badge {
+    background-color: #e74c3c;
+    color: white;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+/* Tooltip (position: absolute ашиглаж байрлуулсан) */
+.tooltip-text {
+    visibility: hidden;
+    width: 180px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 6px;
+    font-size: 12px;
+    font-weight: normal;
+
+    /* Absolute байрлал */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Эх элементийн дээд талд байрлуулна */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Hover хийхэд Tooltip гарж ирнэ */
+.badge-wrapper:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Хөл хэсэг */
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #e9ecef;
+    margin-top: 40px;
+}
